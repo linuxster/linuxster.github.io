@@ -74,13 +74,15 @@
       <p class="meta"><time datetime="2012-11-26T22:00:00" pubdate>Nov 26, 2012</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
 <p>Over the weekend, I built a interactive 3D Rubik's cube simulator in python
 using only <a href="http://matplotlib.org">matplotlib</a> for all the graphics and
 interaction.  Check out the demonstration here:</p>
 <p>{% video /downloads/videos/MagicCube.mp4 680 400 /downloads/videos/MagicCube_frame.jpg %}</p>
-<p>You can browse the source code at the MagicCube github repository ...</p></!--></div>
+<p>You can browse the source code at the MagicCube github repository:
+<a href="http://github.com/davidwhogg/MagicCube">http://github.com/davidwhogg/MagicCube</a>.</p>
+</div>
   <footer>
     <a rel="full-article" href="/blog/2012/11/26/3d-interactive-rubiks-cube-in-python/">Read On &crarr;</a>
   </footer>
@@ -145,7 +147,7 @@ interaction.  Check out the demonstration here:</p>
       <p class="meta"><time datetime="2012-09-26T07:27:00" pubdate>Sep 26, 2012</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
 <p>A while ago I posted some information on the new matplotlib animation
 package (see my tutorial
@@ -154,7 +156,8 @@ a followup post <a href="/blog/2012/09/05/quantum-python">here</a>).  In them, I
 how easy it is to  use matplotlib to create simple animations.</p>
 <p>This morning I came across this cool optical illusion on
 <a href="http://gizmodo.com/5945194/this-optical-trick-is-annoying-the-hell-out-of-me">gizmodo</a></p>
-<p>{% img /images ...</p></!--></div>
+<p>{% img /images/original_illusion.gif %}</p>
+</div>
   <footer>
     <a rel="full-article" href="/blog/2012/09/26/optical-illusions-in-matplotlib/">Read On &crarr;</a>
   </footer>
@@ -167,12 +170,21 @@ how easy it is to  use matplotlib to create simple animations.</p>
       <p class="meta"><time datetime="2012-09-20T20:50:00" pubdate>Sep 20, 2012</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
 <p>This week, for part of a textbook I'm helping to write,
 I spent some time reading and researching the history of Python as
 a scientific computing tool.  I had heard bits and pieces of this in the past,
-but it was fascinating to put it all together and learn ...</p></!--></div>
+but it was fascinating to put it all together and learn about how all the
+individual contributions that have made Python what it is today.
+All of this got me thinking: for most of us, Python was a replacement for
+something: IDL, MatLab, Java, Mathematica, Perl... you name it.
+But what will replace Python?
+Ten years down the road, what language will people be espousing in
+blogs with awkwardly-alliterated titles?  As I thought it through, I
+became more and more convinced that, at least in the scientific computing
+world, Python is here to stay.</p>
+</div>
   <footer>
     <a rel="full-article" href="/blog/2012/09/20/why-python-is-the-last/">Read On &crarr;</a>
   </footer>
@@ -185,14 +197,28 @@ but it was fascinating to put it all together and learn ...</p></!--></div>
       <p class="meta"><time datetime="2012-09-12T19:02:00" pubdate>Sep 12, 2012</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
 <p>Of all the programming styles I have learned,
 <a href="http://en.wikipedia.org/wiki/Dynamic_programming">dynamic programming</a>
 is perhaps the most beautiful.  It can take problems that, at first glance,
 look ugly and intractable, and solve the problem with clean, concise code.
 Where a simplistic algorithm might accomplish something by brute force,
-dynamic programming steps back, breaks ...</p></!--></div>
+dynamic programming steps back, breaks the task into a smaller set of
+sequential parts, and then proceeds in the most efficient way possible.</p>
+<h3>Bayesian Blocks</h3>
+<p>I'll go through an example here where the ideas of dynamic programming
+are vital to some very cool data analysis resuts.
+This post draws heavily from a recent
+<a href="http://adsabs.harvard.edu/abs/2012arXiv1207.5578S">paper</a> by Jeff Scargle
+and collaborators (this is the Scargle of <em>Lomb-Scargle Periodogram</em>
+fame), as well as some conversations I had with Jeff at
+<a href="http://www.astro.caltech.edu/ai12/">Astroinformatics 2012</a>.
+The paper discusses
+a framework called <em>Bayesian Blocks</em>, which is essentially a method of
+creating histograms with bin sizes that adapt to the data (there's a bit
+more to it than that: here we'll focus on histograms for simplicity).</p>
+</div>
   <footer>
     <a rel="full-article" href="/blog/2012/09/12/dynamic-programming-in-python/">Read On &crarr;</a>
   </footer>
@@ -205,7 +231,7 @@ dynamic programming steps back, breaks ...</p></!--></div>
       <p class="meta"><time datetime="2012-09-05T20:12:00" pubdate>Sep 05, 2012</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
 <p><em>Update: a reader contributed some improvements to the Python code presented
  below.  Please see the
@@ -215,7 +241,18 @@ for updated code</em></p>
 I explored the new animation capabilities of the latest
 <a href="http://matplotlib.sourceforge.net">matplotlib</a> release.
 It got me wondering whether it would be possible to simulate more complicated
-physical ...</p></!--></div>
+physical systems in real time in python.  Quantum Mechanics was the first
+thing that came to mind.  It turns out that by mixing a bit of Physics
+knowledge with a bit of computing knowledge, it's quite straightforward
+to simulate and animate a simple quantum mechanical system with python.</p>
+<h2>The Schrodinger Equation</h2>
+<p>The dynamics of a one-dimensional quantum system are governed by the
+time-dependent Schrodinger equation:</p>
+<p>$$
+i\hbar\frac{\partial \psi}{\partial t}
+  = \frac{-\hbar^2}{2m} \frac{\partial^2 \psi}{\partial x^2} + V \psi
+$$</p>
+</div>
   <footer>
     <a rel="full-article" href="/blog/2012/09/05/quantum-python/">Read On &crarr;</a>
   </footer>

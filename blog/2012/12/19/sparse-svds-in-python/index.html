@@ -59,7 +59,7 @@
       <p class="meta"><time datetime="2012-12-19T08:21:00" pubdate>Dez 19, 2012</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
 <p>After <a href="http://fseoane.net/blog/2012/singular-value-decomposition-in-scipy/">Fabian's post</a> on the topic, I have recently returned to thinking about the
 subject of sparse singular value decompositions (SVDs) in Python.</p>
@@ -74,7 +74,7 @@ between high-dimensional observations.  The computational cost is extreme: for
 <em>N</em> objects, one must compute the null space (intimately related to the SVD)
 of a <em>N</em> by <em>N</em> matrix.  Using direct methods (e.g. LAPACK), this can scale
 as bad as $\mathcal{O}[N^3]$ in both memory and speed!</p>
-<!-- PELICAN_END_SUMMARY -->
+
 
 <p>I needed a better option.  I came across the package
 <a href="http://www.caam.rice.edu/software/ARPACK/">ARPACK</a>, a well-tested

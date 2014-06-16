@@ -61,14 +61,29 @@
       <p class="meta"><time datetime="2012-08-24T10:41:00" pubdate>Aug 24, 2012</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
 <p><em>For a more up-to-date comparison of Numba and Cython, see the</em>
 <a href="http://jakevdp.github.io/blog/2013/06/15/numba-vs-cython-take-2/"><em>newer post</em></a>
 <em>on this subject.</em></p>
 <p>Often I'll tell people that I use python for computational analysis, and they
 look at me inquisitively.  "Isn't python pretty slow?"  They have a point.
-Python is an interpreted language, and as ...</p></!--></div>
+Python is an interpreted language, and as such cannot natively perform
+many operations as quickly as a compiled language such as C or Fortran.
+There is also the issue of the oft-misunderstood and much-maligned
+<a href="http://wiki.python.org/moin/GlobalInterpreterLock">GIL</a>,
+which calls into question python's ability to allow true parallel computing.</p>
+<p>Many solutions have been proposed: <a href="http://pypy.org/">PyPy</a> is a much faster
+version of the core python language; 
+<a href="http://code.google.com/p/numexpr/">numexpr</a> provides optimized performance
+on certain classes of operations from within python;
+<a href="http://www.scipy.org/Weave/">weave</a> allows inline inclusion of compiled
+C/C++ code;
+<a href="http://www.cython.org/">cython</a> provides extra markup that allows python
+and/or python-like code to be compiled into C for fast operations.  But
+a naysayer might point out: many of these "python" solutions in practice
+are not really python at all, but clever hacks into Fortran or C.</p>
+</div>
   <footer>
     <a rel="full-article" href="/blog/2012/08/24/numba-vs-cython/">Read On &crarr;</a>
   </footer>
@@ -81,7 +96,7 @@ Python is an interpreted language, and as ...</p></!--></div>
       <p class="meta"><time datetime="2012-08-18T08:01:00" pubdate>Aug 18, 2012</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
 <p><a href="http://matplotlib.sourceforge.net">Matplotlib</a> version 1.1 added some tools
 for creating
@@ -92,7 +107,14 @@ the matplotlib
 page.  I thought I'd share here some of the things I've learned when playing
 around with these tools.</p>
 <h3>Basic Animation</h3>
-<p>The animation tools ...</p></!--></div>
+<p>The animation tools center around the <code>matplotlib.animation.Animation</code> base
+class, which provides a framework around which the animation functionality
+is built.  The main interfaces are <code>TimedAnimation</code> and <code>FuncAnimation</code>,
+which you can read more about in the
+<a href="http://matplotlib.sourceforge.net/api/animation_api.html">documentation</a>.
+Here I'll explore using the <code>FuncAnimation</code> tool, which I have found
+to be the most useful.</p>
+</div>
   <footer>
     <a rel="full-article" href="/blog/2012/08/18/matplotlib-animation-tutorial/">Read On &crarr;</a>
   </footer>
@@ -105,13 +127,18 @@ around with these tools.</p>
       <p class="meta"><time datetime="2012-08-16T14:19:00" pubdate>Aug 16, 2012</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
 <p>In the <a href="/blog/2012/08/08/memoryview-benchmarks/">previous post</a>, I explored
 how cython typed memoryviews can be used to speed up repeated array
 operations.  It became clear that typed memoryviews are superior to
 the ndarray syntax for slicing, and as fast as raw pointers for single
-element access.  In the comments, Mathieu brought up an ...</p></!--></div>
+element access.  In the comments, Mathieu brought up an interesting
+question: is the ndarray syntax as good as typed memoryviews if you're
+not doing slicing?</p>
+<p>The answer turns out to be yes, <em>unless</em> the compiler tries to inline your
+function.</p>
+</div>
   <footer>
     <a rel="full-article" href="/blog/2012/08/16/memoryview-benchmarks-2/">Read On &crarr;</a>
   </footer>
@@ -124,8 +151,7 @@ element access.  In the comments, Mathieu brought up an ...</p></!--></div>
       <p class="meta"><time datetime="2012-08-08T18:50:00" pubdate>Aug 08, 2012</time></p>
 </header>
 
-  <div class="entry-content"><hr />
-<!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
 <p>There was recently a <a href="https://groups.google.com/forum/?fromgroups#!topic/cython-users/8uuxjB_wbBQ[1-25]" title="cython-users archive">thread</a>
 on cython-users which caught my eye.  It has to do with 
@@ -134,7 +160,16 @@ way of working with memory buffers in cython.</p>
 <p>I've been thinking recently about how to do fast
 and flexible memory buffer access in cython.  I contributed the
 <a href="http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.BallTree.html">BallTree</a>
-implementation for ...</p></!--></div>
+implementation for nearest neighbors searching in
+<a href="http://www.scikit-learn.org">scikit-learn</a>, and have been actively thinking
+about how to make it faster and more flexible, including adding the ability
+to specify distance metrics other than euclidean and minkowski.</p>
+<p>In order to accomplish this, I'd like to have a set of distance metric
+functions which take two vectors and compute a distance.  There would
+be many functions with similar call signatures which could then be
+plugged into a code that would iterate over a set of vectors and
+compute the appropriate distances.</p>
+</div>
   <footer>
     <a rel="full-article" href="/blog/2012/08/08/memoryview-benchmarks/">Read On &crarr;</a>
   </footer>
