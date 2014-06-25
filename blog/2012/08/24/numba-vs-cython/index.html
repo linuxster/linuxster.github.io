@@ -1,37 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
+  <meta charset="utf-8">
+  <title>Numba vs Cython</title>
+  <meta name="author" content="Jake Vanderplas">
+
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate"
+        title="Pythonic Perambulations Atom Feed" />
 
 
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link href="/favicon.png" rel="icon">
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="">Pythonic Perambulations <strong>Musings and ramblings through the world of Python and beyond</strong></a></h1>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-            <li><a href="/archives.html">Archives</a></li>
-            <li><a href="http://www.astro.washington.edu/users/vanderplas">Home Page</a></li>
-              <li class="active"><a href="/category/misc.html">misc</a></li>
-        </ul></nav><!-- /#menu -->
-<section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="/blog/2012/08/24/numba-vs-cython/" rel="bookmark"
-         title="Permalink to Numba vs Cython">Numba vs Cython</a></h2>
- 
-  </header>
-  <footer class="post-info">
-    <abbr class="published" title="2012-08-24T10:41:00">
-      Aug 24, 2012
-    </abbr>
-    <address class="vcard author">
-      By <a class="url fn" href="/author/jake-vanderplas.html">Jake Vanderplas</a>
-    </address>
-  </footer><!-- /.post-info -->
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="/">Pythonic Perambulations</a></h1>
+    <h2>Musings and ramblings through the world of Python and beyond</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-atom">Atom</a></li>
+</ul>
+
+
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+
+<ul class="main-navigation">
+    <li><a href="/archives.html">Archives</a></li>
+    <li><a href="http://www.astro.washington.edu/users/vanderplas">Home Page</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">Numba vs Cython</h1>
+      <p class="meta"><time datetime="2012-08-24T10:41:00" pubdate>Aug 24, 2012</time></p>
+</header>
+
   <div class="entry-content">
-    <!-- PELICAN_BEGIN_SUMMARY -->
 
 <p><em>For a more up-to-date comparison of Numba and Cython, see the</em>
 <a href="http://jakevdp.github.io/blog/2013/06/15/numba-vs-cython-take-2/"><em>newer post</em></a>
@@ -53,7 +81,7 @@ C/C++ code;
 and/or python-like code to be compiled into C for fast operations.  But
 a naysayer might point out: many of these "python" solutions in practice
 are not really python at all, but clever hacks into Fortran or C.</p>
-<!-- PELICAN_END_SUMMARY -->
+
 
 <p>I personally have no problem with this. I like python because it gives me a nice
 work-flow: it has a clean syntax, I don't need to spend my time hunting down
@@ -198,14 +226,73 @@ I'm extremely excited to see what numba brings in the future.</p>
 For information on how to view this file, see the
 <a href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">IPython page</a>
 Alternatively, you can view this notebook (but not modify it) using the
-nbviewer <a href="http://nbviewer.ipython.org/url/jakevdp.github.com/downloads/notebooks/numba_vs_cython.ipynb">here</a>.</p>
-  </div><!-- /.entry-content -->
+nbviewer <a href="http://nbviewer.ipython.org/url/jakevdp.github.com/downloads/notebooks/numba_vs_cython.ipynb">here</a>.</p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Jake Vanderplas</span>
+  </span>
+<time datetime="2012-08-24T10:41:00" pubdate>Aug 24, 2012</time></p><div class="sharing">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="/blog/2012/08/24/numba-vs-cython/" data-via="jakevdp" data-counturl="/blog/2012/08/24/numba-vs-cython/" >Tweet</a>
+  <div class="g-plusone" data-size="medium"></div>
+</div>    </footer>
+  </article>
+
+</div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="/blog/2014/06/14/frequentism-and-bayesianism-4-bayesian-in-python/">Frequentism and Bayesianism IV: How to be a Bayesian in Python</a>
+      </li>
+      <li class="post">
+          <a href="/blog/2014/06/12/frequentism-and-bayesianism-3-confidence-credibility/">Frequentism and Bayesianism III: Confidence, Credibility, and why Frequentism and Science do not Mix</a>
+      </li>
+      <li class="post">
+          <a href="/blog/2014/06/10/is-seattle-really-seeing-an-uptick-in-cycling/">Is Seattle Really Seeing an Uptick In Cycling?</a>
+      </li>
+      <li class="post">
+          <a href="/blog/2014/06/06/frequentism-and-bayesianism-2-when-results-differ/">Frequentism and Bayesianism II: When Results Differ</a>
+      </li>
+      <li class="post">
+          <a href="/blog/2014/05/09/why-python-is-slow/">Why Python is Slow: Looking Under the Hood</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+ 
+
+  <section>
+  </section>
+
+
+
+<section>
+    <a href="http://twitter.com/jakevdp" class="twitter-follow-button" data-show-count="true">Follow @jakevdp</a>
 </section>
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jake Vanderplas -
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 </body>
 </html>

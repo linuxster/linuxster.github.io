@@ -1,37 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
+  <meta charset="utf-8">
+  <title>Why Python is the Last Language You'll Have To Learn</title>
+  <meta name="author" content="Jake Vanderplas">
+
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate"
+        title="Pythonic Perambulations Atom Feed" />
 
 
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link href="/favicon.png" rel="icon">
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="">Pythonic Perambulations <strong>Musings and ramblings through the world of Python and beyond</strong></a></h1>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-            <li><a href="/archives.html">Archives</a></li>
-            <li><a href="http://www.astro.washington.edu/users/vanderplas">Home Page</a></li>
-              <li class="active"><a href="/category/misc.html">misc</a></li>
-        </ul></nav><!-- /#menu -->
-<section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="/blog/2012/09/20/why-python-is-the-last/" rel="bookmark"
-         title="Permalink to Why Python is the Last Language You'll Have To Learn">Why Python is the Last Language You'll Have To Learn</a></h2>
- 
-  </header>
-  <footer class="post-info">
-    <abbr class="published" title="2012-09-20T20:50:00">
-      Sep 20, 2012
-    </abbr>
-    <address class="vcard author">
-      By <a class="url fn" href="/author/jake-vanderplas.html">Jake Vanderplas</a>
-    </address>
-  </footer><!-- /.post-info -->
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="/">Pythonic Perambulations</a></h1>
+    <h2>Musings and ramblings through the world of Python and beyond</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-atom">Atom</a></li>
+</ul>
+
+
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+
+<ul class="main-navigation">
+    <li><a href="/archives.html">Archives</a></li>
+    <li><a href="http://www.astro.washington.edu/users/vanderplas">Home Page</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">Why Python is the Last Language You'll Have To Learn</h1>
+      <p class="meta"><time datetime="2012-09-20T20:50:00" pubdate>Sep 20, 2012</time></p>
+</header>
+
   <div class="entry-content">
-    <!-- PELICAN_BEGIN_SUMMARY -->
 
 <p>This week, for part of a textbook I'm helping to write,
 I spent some time reading and researching the history of Python as
@@ -45,7 +73,7 @@ Ten years down the road, what language will people be espousing in
 blogs with awkwardly-alliterated titles?  As I thought it through, I
 became more and more convinced that, at least in the scientific computing
 world, Python is here to stay.</p>
-<!-- PELICAN_END_SUMMARY -->
+
 
 <p>Now I’m not simply talking about inertia.  Javascript has inertia, and that's
 a main reason that web admins still begrudgingly use it.  But Python is 
@@ -65,7 +93,7 @@ all moved to GitHub in late 2010, and the results have been impressive.
 I did some quick data mining of the commit logs on GitHub to learn
 about the rate of new author contributions to core python projects with
 time, and this is what I found:</p>
-<p>{% img /figures/author_count.png 600 [Cumulative number of contributors for python packages] %}</p>
+<p><img width="600" alt="[Cumulative number of contributors for python packages]" title="[Cumulative number of contributors for python packages]" src="/figures/author_count.png"></p>
 <p>See it? The late 2010 transition to GitHub is extremely apparent,
 and this reflects the first reason that NumPy, SciPy, Matplotlib,
 and Python will remain relevant far into the future.
@@ -122,7 +150,7 @@ Cython, PyPy, Theano, Numba, Numexpr, and more.  But
 here’s the thing: someone <em>will</em> come along who has the audacity to strike
 out and unify them.  I love this recent
 <a href="http://twitter.com/dwf/status/246756226367643650">tweet</a> by Dave Warde-Farley:</p>
-<p>{% img /images/dwf_tweet.png 400 [Cumulative number of contributors for python packages] %}</p>
+<p><img width="400" alt="[Cumulative number of contributors for python packages]" title="[Cumulative number of contributors for python packages]" src="/images/dwf_tweet.png"></p>
 <p>Somebody is going to do this: somebody will be the next Travis Oliphant
 and create NumTron to re-unite the community.
 Maybe Dave will be the next Travis Oliphant: he's done some great work on
@@ -152,14 +180,73 @@ how the unwavering vision of folks throughout the years has led to what we
 have today: an unmatched open-source environment for scientific computing.</em></p>
 <p><em>Edit: also check out the
 <a href="http://python-history.blogspot.com/">History of Python</a> blog.  Thanks to
-Fernando for the tip.</em></p>
-  </div><!-- /.entry-content -->
+Fernando for the tip.</em></p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Jake Vanderplas</span>
+  </span>
+<time datetime="2012-09-20T20:50:00" pubdate>Sep 20, 2012</time></p><div class="sharing">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="/blog/2012/09/20/why-python-is-the-last/" data-via="jakevdp" data-counturl="/blog/2012/09/20/why-python-is-the-last/" >Tweet</a>
+  <div class="g-plusone" data-size="medium"></div>
+</div>    </footer>
+  </article>
+
+</div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="/blog/2014/06/14/frequentism-and-bayesianism-4-bayesian-in-python/">Frequentism and Bayesianism IV: How to be a Bayesian in Python</a>
+      </li>
+      <li class="post">
+          <a href="/blog/2014/06/12/frequentism-and-bayesianism-3-confidence-credibility/">Frequentism and Bayesianism III: Confidence, Credibility, and why Frequentism and Science do not Mix</a>
+      </li>
+      <li class="post">
+          <a href="/blog/2014/06/10/is-seattle-really-seeing-an-uptick-in-cycling/">Is Seattle Really Seeing an Uptick In Cycling?</a>
+      </li>
+      <li class="post">
+          <a href="/blog/2014/06/06/frequentism-and-bayesianism-2-when-results-differ/">Frequentism and Bayesianism II: When Results Differ</a>
+      </li>
+      <li class="post">
+          <a href="/blog/2014/05/09/why-python-is-slow/">Why Python is Slow: Looking Under the Hood</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+ 
+
+  <section>
+  </section>
+
+
+
+<section>
+    <a href="http://twitter.com/jakevdp" class="twitter-follow-button" data-show-count="true">Follow @jakevdp</a>
 </section>
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jake Vanderplas -
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 </body>
 </html>
